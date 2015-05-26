@@ -6,19 +6,13 @@ function factorial(number) {
   }
 };
 
+$(document).ready(function() {
+  $("form#factorial").submit(function(event) {
+    var number = parseInt($("input#number").val());
+    var result = factorial(number);
 
-
-
-
-
-
-
-//   if (number > 1) {
-//     var total = 1
-//     for (i > 1; i === number; i++) {
-//       total *= i}
-//       return total;
-//   } else ((number === 0) || (number === 1)) {
-//     return 1;
-//   }
-// };
+    $("span.factorial").text(result)
+    $("#result").show();
+    event.preventDefault();
+  });
+});
